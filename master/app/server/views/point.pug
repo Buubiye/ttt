@@ -1,0 +1,19 @@
+
+// preset form values if we receive a userdata object //
+- user = typeof(udata) != 'undefined' ? udata : { }
+.col-md-4
+    form.card.card-body.bg-light(method='post', action='/send')#point-form
+        h2 Send Money!
+        //- h6 Please Login To Your Account
+        .form-group
+            label Email
+            input.form-control(type='text', id='email', name='email')
+        .form-group
+            label Amount
+            input.form-control(type='text', id='amount', name='amount')
+        #row1
+            button(type='submit')#btn_send_point.btn.btn-primary
+                span.fa.fa-lock
+                | Send
+                
+include modals/form-errors

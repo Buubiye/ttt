@@ -1,0 +1,12 @@
+.col-md-4
+    form.card.card-body.bg-light(method='post')
+        h2 Transaction!
+        ul.list-group.list-group-flush#myList
+            each val in transactions
+                if(udata._id == val.sendTo[0]._id)
+                    li.list-group-item(style='color:green') Got from !{val.gotFrom[0].name} | Amount $!{val.amount} USD
+                else
+                    li.list-group-item(style='color:red') Send to !{val.sendTo[0].name} | Amount $!{val.amount} USD
+        button#loadMore(type="button") Show more
+        br
+        button#showLess(type="button") Show less
